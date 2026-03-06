@@ -1,11 +1,11 @@
 import java.io.File;
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class PlaceNameArray {
     
-    private ArrayList<PlaceNameEntry> data = new ArrayList<PlaceNameEntry>();
+    private ArrayList<PlaceNameEntry> data = new ArrayList<>();
     private int comparisons;
     
     public PlaceNameArray() {
@@ -13,8 +13,7 @@ public class PlaceNameArray {
 
     public PlaceNameArray(String filename, int size) {
         File file  = new File(filename);
-        try {
-            Scanner scanner = new Scanner(file);
+        try (Scanner scanner = new Scanner(file)) {
             for(int i = 0; i < size; i++) {
                 PlaceNameEntry nextPlace = new PlaceNameEntry(scanner.next());
                 for(PlaceNameEntry place : data) {
@@ -24,8 +23,6 @@ public class PlaceNameArray {
                 }
 
             }
-
-        scanner.close(); 
         } 
         catch (Exception e) {
             System.err.println("File not found / Invalid name");
@@ -47,6 +44,4 @@ public class PlaceNameArray {
     public int getComparisons() {
         return comparisons;
     }
-
-    
 }

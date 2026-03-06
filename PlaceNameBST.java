@@ -1,7 +1,7 @@
 import java.io.File;
 import java.util.Scanner;
 
-private BinaryTreeNode<PlaceNameEntry> root;
+private BinaryTreeNode root;
 
 public class PlaceNameBST<PlaceNameEntry> {
     public PlaceNameBST() {

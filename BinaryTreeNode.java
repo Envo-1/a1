@@ -1,5 +1,7 @@
+
 public class BinaryTreeNode<PlaceNameEntry> {
-    private PlaceNameEntry data;
+
+    private final PlaceNameEntry data;
     private BinaryTreeNode<PlaceNameEntry> left;
     private BinaryTreeNode<PlaceNameEntry> right;
 
@@ -28,4 +30,15 @@ public class BinaryTreeNode<PlaceNameEntry> {
     public void setRight(BinaryTreeNode<PlaceNameEntry> right) {
         this.right = right;
     }
+
+    public int getHeight(BinaryTreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+        else {
+            return 1 + Math.max(getHeight(left), getHeight(right));
+        }
+    }
 }
+
+    
