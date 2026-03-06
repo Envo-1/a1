@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 
 public class PlaceNameArray {
+    
     private ArrayList<PlaceNameEntry> data = new ArrayList<PlaceNameEntry>();
     private int comparisons;
+    
     public PlaceNameArray() {
     }
 
@@ -40,6 +42,10 @@ public class PlaceNameArray {
             }
         }
         return "A place by that name could not be found";
+    }
+
+    public int getComparisons() {
+        return comparisons;
     }
 
     
